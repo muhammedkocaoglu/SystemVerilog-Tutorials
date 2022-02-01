@@ -16,3 +16,6 @@ https://code.visualstudio.com/download <br/>
 
 Visual Studio Code Vivado'dan açmak için : <br/>
 "visual studio executable path" --reuse-window [file name] -n[line number] <br/>
+
+Ders videosuna aşağğıdaki linkten erişebilirsiniz.  <br/>
+https://youtu.be/SxqVdu1tgM0?list=PL6jcjOP0HjMouZQTd6zgosAcdJloSOWw0
