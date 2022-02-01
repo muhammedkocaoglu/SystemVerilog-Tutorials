@@ -1,7 +1,7 @@
 # SystemVerilog-Tutorials
 SystemVerilog derslerinde yazdığım kodları içermektedir. <br/>
 
-Youtube'da ders anlatım videolarına aşağıdaki linkten ulaşabilirsiniz. <br/>
+Youtube'da yayınladığım ders anlatım videolarına aşağıdaki linkten ulaşabilirsiniz. <br/>
 
 https://www.youtube.com/playlist?list=PL6jcjOP0HjMouZQTd6zgosAcdJloSOWw0  <br/>
 
