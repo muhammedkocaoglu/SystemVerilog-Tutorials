@@ -1,5 +1,3 @@
-Bu derste neler yaptım ?
-
 SystemVerilog serisinin 2. dersinde neler gösterdim? <br/>
 
 Modelsim ücretsiz versiyonu kurulumu  <br/>
