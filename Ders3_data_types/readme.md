@@ -10,7 +10,7 @@ Parametrik tasarım nasıl yapılır? <br/>
 Testbench kodu nasıl yazılır? <br/>
 
 Ders videosuna aşağıdaki linkten ulaşabilirsiniz.  <br/>
-
+https://youtu.be/XA0y0BVaQHs <br/>
 
 LinkdIn üzerinden bana ulaşabilirsiniz. <br/>
-https://www.linkedin.com/in/muhammed-kocao%C4%9Flu-2b661b178/
+https://www.linkedin.com/in/muhammed-kocao%C4%9Flu-2b661b178/ <br/>
