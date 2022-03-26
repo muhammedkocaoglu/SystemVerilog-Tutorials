@@ -15,3 +15,6 @@ casez nedir? <br/>
 simulasyon ve donanımdaki farklılık oluşturan bir durum örneği <br/>
 case...inside nedir? <br/>
 VHDL ve Verilog/SystemVerilog'daki case ifadeleri nasıl farklılık gösterir? <br/>
+
+LinkedIn adresimden bana ulaşabilirsiniz. <br/>
+https://www.linkedin.com/in/muhammed-kocao%C4%9Flu-2b661b178/ <br/>
