@@ -10,6 +10,7 @@ casex ve casez yapıları orijinal verilog'da olan yapılardır. SystemVerilog i
 Bu yapılar case içersindeki ifadelerdeki bazı bitlerin don't case olarak algılanmasını sağlayan case yapılarıdır. <br/>
  <br/>
 Konuyu anlattığım videoya aşağıdaki linkten ulaşabilirsiniz. <br/>
- <br/> 
+  <br/> 
  <br/>
 Linkedin üzerinden bağlantı kurarak sorularınızı/taleplerinizi iletebilirsiniz. <br/>
+https://www.linkedin.com/in/muhammed-kocao%C4%9Flu-2b661b178/ <br/>
