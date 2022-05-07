@@ -24,7 +24,7 @@ module tb_gray_binary #
     (
         parameter N = 4
     );
-    logic [N-1:0] gray_in;
+    
     logic [N-1:0] bin_out;
 
     logic [N-1:0] bin_in;
