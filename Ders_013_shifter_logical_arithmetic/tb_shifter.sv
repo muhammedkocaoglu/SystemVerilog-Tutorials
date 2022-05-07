@@ -15,7 +15,7 @@ module tb_shifter();
             .dout(dout)
         );
 
-    const logic [7:0] result_vector [0:7] = {
+    const logic [7:0] result_vector [0:7] = '{
         8'b10011101,
         8'b01110100,
         8'b01110100,
