@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/25/2022 07:23:22 PM
+// Create Date: 05/30/2022 11:36:41 PM
 // Design Name: 
 // Module Name: tb_alu
 // Project Name: 
@@ -47,4 +47,3 @@ initial begin
    end
 end
 endmodule
-

@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/25/2022 07:18:00 PM
+// Create Date: 05/30/2022 10:27:20 PM
 // Design Name: 
 // Module Name: alu
 // Project Name: 
@@ -21,7 +21,7 @@
 
 import alu_pkg::*;
 
-module alu(
+module alu (
    input  logic [N-1:0] A,
    input  logic [N-1:0] B,
    input  logic [2:0]   opcode,
