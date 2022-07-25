@@ -33,11 +33,11 @@ package alu_pkg;
       logic [31:0]   d3;
    } my_struct_t;
 
-   function logic add(muhammed_t srcA, muhammed_t srcB);
+   function logic add_alu(muhammed_t srcA, muhammed_t srcB);
       return srcA + srcB;
    endfunction
 
-   function muhammed_t sub(muhammed_t srcA, muhammed_t srcB);
+   function muhammed_t sub_alu(muhammed_t srcA, muhammed_t srcB);
       return srcA - srcB;
    endfunction
 

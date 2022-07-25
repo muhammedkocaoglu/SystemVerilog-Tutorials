@@ -30,10 +30,10 @@ module alu(
 
    always_comb begin
       case(opcode)
-         0:    Y = add(A, B);
-         1:    Y = sub(A, B);
-         2:    Y = sub(A, 1);
-         3:    Y = add(A, 1);
+         0:    Y = add_alu(A, B);
+         1:    Y = sub_alu(A, B);
+         2:    Y = sub_alu(A, 1);
+         3:    Y = add_alu(A, 1);
          4:    Y = inverse_alu(A);
          5:    Y = and_alu(A, B);
          6:    Y = or_alu(A, B);
