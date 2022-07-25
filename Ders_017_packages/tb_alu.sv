@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/24/2022 10:29:50 PM
+// Create Date: 07/25/2022 07:23:22 PM
 // Design Name: 
-// Module Name: tb_user_defined_type
+// Module Name: tb_alu
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,12 +19,32 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+import alu_pkg::*;
 
-module tb_user_defined_type(
-
-   );
-
+module tb_alu;
 
 
+logic [N-1:0] A;
+logic [N-1:0] B;
+logic [2:0]   opcode;
+logic [N-1:0] Y;
+
+alu alu_inst (
+   .A          (A       ),
+   .B          (B       ),
+   .opcode     (opcode  ),
+   .Y          (Y       )
+);
+
+initial begin
+   #10;
+
+   A = 73;
+   B = 42;
+   for (int i = 0; i < 8; i++) begin
+      opcode = i;
+      #5;
+   end
+end
 endmodule
 
