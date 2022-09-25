@@ -22,11 +22,10 @@
 
 module non_blocking(
         input  logic       clk,
-        input  logic       rstn,
-        input  logic       trig,
+        input  logic       rstn, // active-low reset
+        input  logic       ena,
         input  logic [7:0] srcA,
         input  logic [7:0] srcB,
-        input  logic [7:0] srcC,
         output logic [7:0] dout_nb,
         output logic [7:0] dout_b
     );
@@ -48,52 +47,50 @@ module non_blocking(
     end process;
     */
 
-    // dout_nb <= srcA + srcB + srcC
-    always_ff @(posedge clk, negedge rstn) begin : non_blocking
-        logic [7:0] temp_nb;
+    logic [7:0] temp_nb;
+    always_ff @(posedge clk) begin : non_blocking
         if (!rstn) begin
             dout_nb <= '0;
             temp_nb <= '0;
-        end else begin
-            temp_nb <= srcA + srcB + srcC;
+        end else begin // := 
+            temp_nb <= srcA + srcB;
             dout_nb <= temp_nb;
         end
     end : non_blocking
 
-    // dout_b = srcA + srcB + srcC
     // logic [7:0] temp_b;
-    always_ff @(posedge clk, negedge rstn) begin : mixed
+    always_ff @(posedge clk) begin : blocking
         logic [7:0] temp_b;
         if (!rstn) begin
-            dout_b  <= '0;
-            temp_b  = '0;
-        end else begin
+            dout_b <= '0;
             temp_b = '0;
-            temp_b = srcA + srcB + srcC;
-            dout_b <= temp_b; // dout_b <= srcA + srcB + srcC
+        end else begin
+            temp_b = srcA + srcB;
+            dout_b <= temp_b; // srcA + srcB
         end
-    end : mixed
+    end : blocking
 
     logic [7:0] cntr_b;
     logic [7:0] cntr_nb;
-    always_ff @(posedge clk, negedge rstn) begin
+    always_ff @(posedge clk) begin
         if (!rstn) begin
             cntr_nb <= '0;
         end else begin
             cntr_nb <= cntr_nb + 1;
-            if (trig) begin
-                cntr_nb <= cntr_nb + 2; // cntr_nb <= cntr_nb + 2;
+            if (ena) begin
+                cntr_nb <= cntr_nb + 2;
             end
         end
     end
 
-    always_ff @(posedge clk, negedge rstn) begin
+
+    always_ff @(posedge clk) begin
         if (!rstn) begin
             cntr_b = '0;
         end else begin
             cntr_b = cntr_b + 1;
-            if (trig) begin
-                cntr_b = cntr_b + 2; // cntr_b = cntr_b + 1 + 2
+            if (ena) begin
+                cntr_b = cntr_b + 2; // cntr_b + 1 + 2
             end
         end
     end
