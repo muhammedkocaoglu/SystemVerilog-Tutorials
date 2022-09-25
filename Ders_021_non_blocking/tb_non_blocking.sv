@@ -26,7 +26,7 @@ module tb_non_blocking(
 
     bit         clk;
     logic       rstn; // active-low reset
-    logic       ena = 0;
+    logic       ena  = 0;
     logic [7:0] srcA = 0;
     logic [7:0] srcB = 0;
     logic [7:0] dout_nb;

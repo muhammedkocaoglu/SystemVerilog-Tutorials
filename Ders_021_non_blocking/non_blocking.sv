@@ -41,7 +41,7 @@ module non_blocking(
             dout_nb <= (others => '0');
         elsif rising_edge(clk) then 
             temp_nb := (others => '0');
-            temp_nb := srcA + srcB + srcC;
+            temp_nb := srcA + srcB;
             dout_nb <= temp_nb;
         end if;
     end process;
