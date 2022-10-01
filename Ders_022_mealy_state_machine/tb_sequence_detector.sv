@@ -18,19 +18,18 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+// 1011
 
 module tb_sequence_detector(
 
     );
-    bit   clk;
+
+    logic clk=0;
     logic rstn;
     logic din;
     logic dout_mealy;
 
-    sequence_detector sequence_detector( .* );
-
-    logic [3:0] seq;
+    sequence_detector sequence_detector(.*);
 
     always #5 clk <= ~clk;
 
@@ -40,25 +39,25 @@ module tb_sequence_detector(
         @(negedge clk);
         @(negedge clk);
         rstn <= 1'b1;
-
-        #1000;
-        $stop;
     end
 
     always_ff @(posedge clk) begin
         if (!rstn) begin
-            din <= 1'b0;
+            din <= 0;
         end else begin
             din <= $random();
         end
     end
+
+    logic [3:0] seq;
 
     always_ff @(posedge clk) begin
         if (!rstn) begin
             seq <= 4'b0;
         end else begin
             seq <= {seq[2:0], din};
-            $display("din: %b, seq: %b and dout_mealy = %b", din, seq, dout_mealy);
+            $display("din: %b, seq: %b, dout_mealy: %b", din, seq, dout_mealy);
         end
     end
+
 endmodule
