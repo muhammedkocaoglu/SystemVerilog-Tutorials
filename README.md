@@ -17,9 +17,12 @@ SystemVerilog öğrenmeden önce Verilog öğrenmeniz şart değildir. Ancak Ver
 Verilog dersleri için Udemy platformunda FATİH İLİG kanalını inceleyebilirsiniz.   <br/>
 https://www.udemy.com/user/fatih-ilig/  <br/>
 
+
 Oğuz Ergin youtube kanalında Verilog HDL adlı oynatma listesini de tavsiye ederim. Oradaki içerikler faydalı olacaktır. <br/>
 https://www.youtube.com/watch?v=qSLRujmsfz0&list=PLvNq8wrSYGAU8Cf3n9rhL-GB4yMNO1-XC  <br/>
 
+
+Verilog ve SystemVerilog öğrenmenizde faydalı olabileceğini düşündüğüm kaynaklar:  <br/>
 https://www.udemy.com/course/synthesizable-systemverilog-constructs-for-rtl-design/ <br/> 
 https://www.verilogpro.com/systemverilog/  <br/> 
 https://www.chipverify.com/systemverilog/systemverilog-tutorial <br/> 
