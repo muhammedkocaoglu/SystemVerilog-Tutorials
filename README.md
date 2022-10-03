@@ -11,6 +11,14 @@ LinkedIn <br/>
 https://www.linkedin.com/in/muhammedkocaoglu <br/>
 
  Dersleri hazırlarken yanlış bilgi vermemek için olabildiğince çok kaynaktan yararlanmaya çalışıyorum. Videolarımı hazırlarken faydalandığım kaynakları burada paylaşacağım ve zamanla üzerine eklemeler de olacak. Sizler de bu alana katkı sağlayabilirsiniz. <br/> 
+ 
+SystemVerilog öğrenmeden önce Verilog öğrenmeniz şart değildir. Ancak Verilog bilen bir kişi çok daha kolay öğrenebilir. Çünkü SystemVerilog Verilog dilinin üzerine yeni özellikler eklenerek geliştirilmiştir. 
+
+Verilog dersleri için Udemy platformunda FATİH İLİG kanalını inceleyebilirsiniz.   <br/>
+https://www.udemy.com/user/fatih-ilig/  <br/>
+
+Oğuz Ergin youtube kanalında Verilog HDL adlı oynatma listesini de tavsiye ederim. Oradaki içerikler faydalı olacaktır. <br/>
+https://www.youtube.com/watch?v=qSLRujmsfz0&list=PLvNq8wrSYGAU8Cf3n9rhL-GB4yMNO1-XC  <br/>
 
 https://www.udemy.com/course/synthesizable-systemverilog-constructs-for-rtl-design/ <br/> 
 https://www.verilogpro.com/systemverilog/  <br/> 
