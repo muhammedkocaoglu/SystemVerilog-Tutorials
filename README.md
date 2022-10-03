@@ -14,7 +14,7 @@ https://www.linkedin.com/in/muhammedkocaoglu <br/>
  
 SystemVerilog öğrenmeden önce Verilog öğrenmeniz şart değildir. Ancak Verilog bilen bir kişi çok daha kolay öğrenebilir. Çünkü SystemVerilog Verilog dilinin üzerine yeni özellikler eklenerek geliştirilmiştir. 
 
-Verilog dersleri için Udemy platformunda FATİH İLİG kanalını inceleyebilirsiniz.   <br/>
+Verilog dersleri için Udemy platformunda FATİH İLİĞ kanalını inceleyebilirsiniz.   <br/>
 https://www.udemy.com/user/fatih-ilig/  <br/>
 
 
