@@ -14,15 +14,17 @@ https://www.linkedin.com/in/muhammedkocaoglu <br/>
  
 SystemVerilog öğrenmeden önce Verilog öğrenmeniz şart değildir. Ancak Verilog bilen bir kişi çok daha kolay öğrenebilir. Çünkü SystemVerilog Verilog dilinin üzerine yeni özellikler eklenerek geliştirilmiştir. 
 
-Verilog dersleri için Udemy platformunda FATİH İLİĞ kanalını inceleyebilirsiniz.   <br/>
+- Verilog dersleri için Udemy platformunda FATİH İLİĞ kanalını inceleyebilirsiniz.   <br/>
 https://www.udemy.com/user/fatih-ilig/  <br/>
 
 
-Oğuz Ergin youtube kanalında Verilog HDL adlı oynatma listesini de tavsiye ederim. Oradaki içerikler faydalı olacaktır. <br/>
+- Oğuz Ergin youtube kanalında Verilog HDL adlı oynatma listesini de tavsiye ederim. Oradaki içerikler faydalı olacaktır. <br/>
 https://www.youtube.com/watch?v=qSLRujmsfz0&list=PLvNq8wrSYGAU8Cf3n9rhL-GB4yMNO1-XC  <br/>
 
+- Mehmet Burak Aykenar tarafından TOBB ETU'de verilen Mantıksal Devre Tasarımı dersi hem temel açışından hem de Verilog öğrenimi açısından faydalı olacaktır.  <br/>
+https://www.youtube.com/watch?v=g6lum-04D20&list=PLZyLAHn50933YtB32ECJujIskuFJiz8AJ  <br/>
 
-Verilog ve SystemVerilog öğrenmenizde faydalı olabileceğini düşündüğüm kaynaklar:  <br/>
+- Verilog ve SystemVerilog öğrenmenizde faydalı olabileceğini düşündüğüm kaynaklar:  <br/>
 https://www.udemy.com/course/synthesizable-systemverilog-constructs-for-rtl-design/ <br/> 
 https://www.verilogpro.com/systemverilog/  <br/> 
 https://www.chipverify.com/systemverilog/systemverilog-tutorial <br/> 
