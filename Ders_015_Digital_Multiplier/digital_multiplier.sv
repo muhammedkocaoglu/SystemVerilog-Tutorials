@@ -23,8 +23,8 @@
 module digital_multiplier # (
       parameter N = 4
    )(
-      input  logic [N-1:0]     mul_srcA_i,
-      input  logic [N-1:0]     mul_srcB_i,
+      input  logic [N-1:0]   mul_srcA_i,
+      input  logic [N-1:0]   mul_srcB_i,
       output logic [N*2-1:0] mul_result_o
    );
 
