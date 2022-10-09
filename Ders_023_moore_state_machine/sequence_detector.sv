@@ -136,7 +136,7 @@ module sequence_detector(
                     if (din) begin // 1011
                         state_moore <= S4_MOORE;
                     end else begin
-                        state_moore <= S0_MOORE;
+                        state_moore <= S2_MOORE;
                     end
                 end
 
