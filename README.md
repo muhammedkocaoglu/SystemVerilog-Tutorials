@@ -31,5 +31,4 @@ https://www.chipverify.com/systemverilog/systemverilog-tutorial <br/>
 https://faculty.kfupm.edu.sa/COE/aimane/coe405/FPGA%20Prototyping%20with%20Verilog%20examples.pdf <br/> 
 https://verificationacademy.com/ <br/>
 https://www.sutherland-hdl.com/about.html  <br/>
-
-Stuart Sutherland - RTL Modeling with SystemVerilog for Simulation and Synthesis using SystemVerilog for ASIC and FPGA design (2017, Sutherland HDL, Inc.) - libgen.lc
+Stuart Sutherland - RTL Modeling with SystemVerilog for Simulation and Synthesis using SystemVerilog for ASIC and FPGA design <br/>
