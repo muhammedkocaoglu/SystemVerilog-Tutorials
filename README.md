@@ -32,3 +32,4 @@ https://faculty.kfupm.edu.sa/COE/aimane/coe405/FPGA%20Prototyping%20with%20Veril
 https://verificationacademy.com/ <br/>
 https://www.sutherland-hdl.com/about.html  <br/>
 Stuart Sutherland - RTL Modeling with SystemVerilog for Simulation and Synthesis using SystemVerilog for ASIC and FPGA design <br/>
+Stuart Sutherland, Don Mills - Verilog and SystemVerilog Gotchas_ 101 Common Coding Errors and How to Avoid Them <br/>
