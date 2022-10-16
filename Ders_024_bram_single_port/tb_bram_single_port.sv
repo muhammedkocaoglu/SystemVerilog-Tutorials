@@ -20,25 +20,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module tb_bram_single_port #
+module tb_bram_single_port  # 
 (
-    parameter RAM_WIDTH = 8,  
+    parameter RAM_WIDTH = 8,
     parameter RAM_DEPTH = 1024
 );
-
     logic                         clk=0;
-    logic                         wr_en; 
-    logic                         rd_en; 
-    logic [$clog2(RAM_DEPTH)-1:0] addr;  
-    logic [RAM_WIDTH-1:0]         din;    
+    logic                         wr_en;
+    logic                         rd_en;
+    logic [$clog2(RAM_DEPTH)-1:0] addr;
+    logic [RAM_WIDTH-1:0]         din;
     logic [RAM_WIDTH-1:0]         dout;
 
-    bram_single_port #
+    bram_single_port # 
     (
-        .RAM_WIDTH(RAM_WIDTH),
-        .RAM_DEPTH(RAM_DEPTH)
-    ) 
-    bram_single_port_inst(.*);
+        .RAM_WIDTH  (RAM_WIDTH),
+        .RAM_DEPTH  (RAM_DEPTH)
+    )
+    bram_single_port_inst 
+    (
+        .*
+    );
 
     always #5 clk <= ~clk;
 
@@ -53,16 +55,17 @@ module tb_bram_single_port #
         addr <= 1;
         @(negedge clk);
         wr_en <= 1'b0;
+
         #50;
+
         @(negedge clk);
         addr <= 0;
         rd_en <= 1'b1;
         @(negedge clk);
         addr <= 1;
-        rd_en <= 1'b1;
-        #50;
         @(negedge clk);
         rd_en <= 1'b0;
+        #50;
         $stop;
-    end 
+    end
 endmodule
