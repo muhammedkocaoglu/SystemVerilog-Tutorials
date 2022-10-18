@@ -20,34 +20,35 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bram_dual_port #
+module bram_dual_port # 
 (
-    parameter RAM_WIDTH = 64, 
-    parameter RAM_DEPTH = 512
-) 
+    parameter RAM_WIDTH = 16,
+    parameter RAM_DEPTH = 1024
+)
 (
-    input  logic                         clk, 
-    input  logic                         wr_ena, 
-    input  logic                         rd_enb, 
-    input  logic [$clog2(RAM_DEPTH)-1:0] addra, 
-    input  logic [$clog2(RAM_DEPTH)-1:0] addrb, 
-    input  logic [RAM_WIDTH-1:0]         dina,          
-    output logic [RAM_WIDTH-1:0]         doutb         
-  );
-  
-    logic [RAM_WIDTH-1:0] ram [RAM_DEPTH-1:0] = '{default:0};
-  
-    always_ff @(posedge clk) begin
-        if (wr_en) begin  
-            ram[addra] <= dina;
-        end
-    end
+    input  logic                         clk,
+    input  logic                         wr_ena,
+    input  logic                         rd_enb,
+    input  logic [$clog2(RAM_DEPTH)-1:0] addra,
+    input  logic [$clog2(RAM_DEPTH)-1:0] addrb,
+    input  logic [RAM_WIDTH-1:0]         dina,
+    output logic [RAM_WIDTH-1:0]         doutb
+);
 
-    always_ff @(posedge clk) begin
-        if (rd_en) begin
-            doutb <= ram[addrb];
-        end
+(* ram_style = "block" *) // block, distributed, register
+logic [RAM_WIDTH-1:0] dpram [0:RAM_DEPTH-1] = '{default:0};
+
+always_ff @(posedge clk) begin : WRITE
+    if (wr_ena) begin
+        dpram[addra] <= dina;
     end
+end : WRITE
+
+always_ff @(posedge clk) begin : READ
+    if (rd_enb) begin
+        doutb <= dpram[addrb];
+    end
+end : READ
   
-  endmodule
+endmodule
   
