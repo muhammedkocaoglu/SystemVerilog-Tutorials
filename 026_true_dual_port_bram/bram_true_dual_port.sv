@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bram_true_dual_port # 
+module bram_true_dual_port  # 
 (
     parameter RAM_WIDTH = 16,
     parameter RAM_DEPTH = 1024
@@ -39,23 +39,23 @@ module bram_true_dual_port #
     output logic [RAM_WIDTH-1:0]         doutb
 );
 
-    (* ram_style = "block" *) // block, distributed, register
-    logic [RAM_WIDTH-1:0] dpram [0:RAM_DEPTH-1] = '{default:0};
+(* ram_style = "block" *) // block, distributed, register
+logic [RAM_WIDTH-1:0] dpram [0:RAM_DEPTH-1] = '{default:0};
 
-    always_ff @(posedge clk) begin : PORTA
-        if (wr_ena) begin
-            dpram[addra] <= dina;
-        end else if (rd_ena) begin
-            douta <= dpram[addra];
-        end
-    end : PORTA
+always_ff @(posedge clk) begin : PORTA
+    if (wr_ena) begin
+        dpram[addra] <= dina;
+    end else if (rd_ena) begin
+        douta <= dpram[addra];
+    end
+end : PORTA
 
-    always_ff @(posedge clk) begin : PORTB
-        if (wr_enb) begin
-            dpram[addrb] <= dinb;
-        end else if (rd_enb) begin
-            doutb <= dpram[addrb];
-        end
-    end : PORTB
-
+always_ff @(posedge clk) begin : PORTB
+    if (wr_enb) begin
+        dpram[addrb] <= dinb;
+    end else if (rd_enb) begin
+        doutb <= dpram[addrb];
+    end
+end : PORTB
+  
 endmodule
