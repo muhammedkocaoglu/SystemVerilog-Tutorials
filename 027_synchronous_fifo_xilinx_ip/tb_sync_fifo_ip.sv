@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/25/2022 08:05:20 PM
+// Create Date: 10/30/2022 12:29:08 AM
 // Design Name: 
 // Module Name: tb_sync_fifo_ip
 // Project Name: 
@@ -20,63 +20,71 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module tb_sync_fifo_ip();
+module tb_sync_fifo_ip(
+
+    );
 
     logic       clk=0;
-    logic       rst;
+    logic       srst;
     logic [7:0] din;
     logic       wr_en;
     logic       rd_en;
     logic [7:0] dout;
     logic       full;
     logic       empty;
-    logic [5:0] data_count;
+    logic [8:0] data_count;
 
-    logic [7:0] fifo_golden [$];
+    sync_fifo_ip sync_fifo_ip_inst( .* );
+
+    parameter DATA_WIDTH = 8;
+    parameter FIFO_DEPTH = 2**9;
 
     always #5 clk <= ~clk;
 
     initial begin
-        rst <= 1'b1;
+        srst <= 1'b1;
         @(negedge clk);
         @(negedge clk);
         @(negedge clk);
-        rst <= 1'b0;
-        #25000;
+        @(negedge clk);
+        srst <= 1'b0;
+        #250000;
         $stop;
     end
 
-    logic [3:0] cntr;
-    logic ena_wr, ena_rd;
+    logic [7:0] fifo_golden [$]; // push_back, pop_front
+
+    logic write_active, read_active;
+    logic [3:0] cntr_read;
+    logic [1:0] cntr_write;
 
     always_ff @(posedge clk) begin
-        if (rst) begin
-            cntr <= 0;
-            {ena_rd, ena_wr} <= 2'b00;
+        if (srst) begin
+            cntr_read <= 0;
+            cntr_write <= 0;
+            {write_active, read_active} <= 2'b00;
         end else begin
-            {ena_rd, ena_wr} <= 2'b00;
-            cntr <= cntr + 1;
-            if (cntr < 15)  ena_wr <= 1'b1;
-            if (cntr < 2)   ena_rd <= 1'b1;
+            {write_active, read_active} <= 2'b00;
+            cntr_read <= cntr_read + 1;
+            cntr_write <= cntr_write + 1;
+
+            if (cntr_read  == 0) read_active <= 1'b1;
+            if (cntr_write == 1) write_active <= 1'b1;
         end
     end
 
     always_ff @(posedge clk) begin
-        logic wr_en_var;
-        logic [7:0] din_var;
-        if (rst) begin
+        if (srst) begin
             wr_en <= 0;
             din <= 0;
         end else begin
-            wr_en <= 0;
-            if (!full && ena_wr) begin
-                wr_en_var = $random();
-                din_var = $random();
-                if (wr_en_var) begin
-                    fifo_golden.push_back(din_var);
-                    din <= din_var;
-                    wr_en <= 1;
-                end
+            wr_en <= 1'b0;
+            if (!full && write_active) begin // && write_active
+                din <= $random();
+                wr_en <= 1;
+            end
+            if (wr_en) begin
+                fifo_golden.push_back(din);
             end
         end
     end
@@ -84,23 +92,25 @@ module tb_sync_fifo_ip();
     always_ff @(posedge clk) begin
         logic rd_en_prev;
         logic [7:0] dout_var;
-        if (rst) begin
+        if (srst) begin 
             rd_en <= 0;
         end else begin
-            rd_en <= 1'b0;
-            if (!empty && ena_rd) begin
-                rd_en <= $random();
+            rd_en <= 0;
+            if (!empty && read_active) begin 
+                rd_en <= 1;
             end
 
             rd_en_prev <= rd_en;
 
             if (rd_en_prev) begin
                 dout_var = fifo_golden.pop_front();
-                assert (dout == dout_var) $display("true. dout %h == dout golden %h", dout, dout_var);
-                else   $fatal("false. dout %h == dout golden %h", dout, dout_var);
+                assert (dout_var == dout) $display("true: dout_var == %h and dout == %h ", dout_var, dout);
+                else   $fatal("error: dout_var == %h and dout == %h ", dout_var, dout);
             end
+
         end
     end
 
-    sync_fifo_ip sync_fifo_ip_inst(.*);
+
+
 endmodule
