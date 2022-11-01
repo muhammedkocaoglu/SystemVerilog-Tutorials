@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: MUHAMMED KOCAOGLU
 // 
 // Create Date: 11/01/2022 08:09:39 PM
 // Design Name: 
