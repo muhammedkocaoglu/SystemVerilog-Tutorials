@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: MUHAMMED KOCAOGLU
+// Engineer: 
 // 
 // Create Date: 11/01/2022 08:09:39 PM
 // Design Name: 
@@ -43,6 +43,7 @@ module sync_fifo_rtl # (
             rd_ptr <= '0;
             wr_ptr <= '0;
             dout   <= '0;
+            data_count <= '0;
         end else begin 
             case ({wr_en, rd_en})
                 2'b00: ; // no operation 
@@ -50,13 +51,13 @@ module sync_fifo_rtl # (
                 2'b01: begin
                     dout <= dpram[rd_ptr];
                     rd_ptr <= rd_ptr + 1;
-                    data_count <= data_count - 1;
+                    data_count <= #100ps data_count - 1;
                 end
 
                 2'b10: begin
                     dpram[wr_ptr] <= din;
                     wr_ptr <= wr_ptr + 1;
-                    data_count <= data_count + 1;
+                    data_count <= #100ps data_count + 1;
                 end
 
                 2'b11: begin
