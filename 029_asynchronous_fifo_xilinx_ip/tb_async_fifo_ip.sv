@@ -62,7 +62,7 @@ module tb_async_fifo_ip(
     always_ff @(posedge wr_clk && ena == 1) begin
         wr_cntr <= wr_cntr + 1;
         wr_en <= 0;
-        if (wr_cntr == 0) begin
+        if (wr_cntr == 0 && full == 0) begin
             wr_en <= 1;
             din <= $random();
         end
@@ -77,7 +77,7 @@ module tb_async_fifo_ip(
     always_ff @(posedge rd_clk && ena == 1) begin
         rd_cntr <= rd_cntr + 1;
         rd_en <= 0;
-        if (rd_cntr == 5) begin
+        if (rd_cntr == 5 && empty == 0) begin
             rd_en <= 1;
         end
 
