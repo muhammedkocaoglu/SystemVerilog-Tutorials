@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/28/2023 09:25:55 AM
+// Create Date: 01/29/2023 09:22:36 AM
 // Design Name: 
 // Module Name: tb_async_fifo_rtl
 // Project Name: 
@@ -40,7 +40,7 @@ module tb_async_fifo_rtl # (
     logic [DW-1:0] DOUT;
     logic          EMPTY;
 
-    async_fifo_rtl #(.DW(DW))
+    async_fifo_rtl # (.DW(DW))
     async_fifo_rtl (.*);
 
     always #(wr_clkperiod/2.0) WR_CLK <= ~WR_CLK;
@@ -52,9 +52,8 @@ module tb_async_fifo_rtl # (
         ARSTN <= 1'b1;
         #100;
         ARSTN <= 1'b0;
-        #54;
+        #53;
         ARSTN <= 1'b1;
-
         #100;
         $stop;
     end

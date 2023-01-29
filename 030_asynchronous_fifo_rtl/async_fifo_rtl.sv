@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/28/2023 09:13:39 AM
+// Create Date: 01/29/2023 09:18:30 AM
 // Design Name: 
 // Module Name: async_fifo_rtl
 // Project Name: 
@@ -34,24 +34,10 @@ module async_fifo_rtl # (
         output logic          EMPTY
     );
 
-    logic wr_srstn, wr_srstn_prev;
-    logic rd_srstn, rd_srstn_prev;
+    logic wr_srstn, rd_srstn;
 
-    always_ff @(posedge WR_CLK, negedge ARSTN) begin : SYNC_WR_RST
-        if (!ARSTN) begin
-            {wr_srstn, wr_srstn_prev} <= 2'b00;
-        end else begin
-            wr_srstn_prev <= 1'b1;
-            wr_srstn <= wr_srstn_prev;
-        end
-    end : SYNC_WR_RST
+    sync_reset sync_reset_wr(.CLK(WR_CLK), .ARSTN(ARSTN), .SRSTN(wr_srstn));
+    sync_reset sync_reset_rd(.CLK(RD_CLK), .ARSTN(ARSTN), .SRSTN(rd_srstn));
 
-    always_ff @(posedge RD_CLK, negedge ARSTN) begin : SYNC_RD_RST
-        if (!ARSTN) begin
-            {rd_srstn, rd_srstn_prev} <= 2'b00;
-        end else begin
-            rd_srstn_prev <= 1'b1;
-            rd_srstn <= rd_srstn_prev;
-        end
-    end : SYNC_RD_RST
+
 endmodule
