@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: MUHAMMED KOCAOGLU
+// Engineer: 
 // 
 // Create Date: 04/01/2023 08:48:11 AM
 // Design Name: 
@@ -21,9 +21,9 @@
 
 
 module uart_tx(
-    input  logic          CLK,
-    input  logic          SRSTN,
-    uart_tx_if.uart_tx_mp _uart_tx
+    input  logic        CLK,
+    input  logic        SRSTN,
+    uart_if.uart_tx_mp  _uart_tx_if
   );
 
   typedef enum logic { S_IDLE, S_TRANSFER } t_state;
@@ -36,30 +36,30 @@ module uart_tx(
   always_ff @(posedge CLK) begin
     if (!SRSTN) begin
       state <= S_IDLE;
-      _uart_tx.TX_DONE <= 1'b0;
-      _uart_tx.TX_SERIAL <= 1'b1;
+      _uart_tx_if.DONE <= 1'b0;
+      _uart_tx_if.SERIAL <= 1'b1;
     end else begin
       case (state)
         S_IDLE: begin
-          _uart_tx.TX_SERIAL <= 1'b1;
-          _uart_tx.TX_DONE <= 1'b0;
-          if (_uart_tx.TX_ENA) begin
+          _uart_tx_if.SERIAL <= 1'b1;
+          _uart_tx_if.DONE <= 1'b0;
+          if (_uart_tx_if.ENA) begin
             state <= S_TRANSFER;
             cntr <= 0;
             bitcntr <= 0;
-            tx_buffer <= {1'b1, _uart_tx.TX_DIN, 1'b0};
+            tx_buffer <= {1'b1, _uart_tx_if.DATA, 1'b0};
           end
         end
 
         S_TRANSFER: begin
-          _uart_tx.TX_SERIAL <= tx_buffer[0];
+          _uart_tx_if.SERIAL <= tx_buffer[0];
           cntr <= cntr + 1;
-          if (cntr == _uart_tx.CLKDIV) begin
+          if (cntr == _uart_tx_if.CLKDIV) begin
             cntr <= 0;
             bitcntr <= bitcntr + 1;
             tx_buffer[8:0] <= tx_buffer[9:1];
             if (bitcntr == 9) begin
-              _uart_tx.TX_DONE <= 1'b1;
+              _uart_tx_if.DONE <= 1'b1;
               state <= S_IDLE;
             end
           end

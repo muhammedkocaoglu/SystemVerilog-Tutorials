@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 06/17/2023 09:04:53 AM
+// Create Date: 06/27/2023 04:48:39 PM
 // Design Name: 
-// Module Name: uart_tx_if
+// Module Name: uart_if
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-interface uart_tx_if;
+interface uart_if;
   logic [15:0] CLKDIV;
-  logic [7:0]  TX_DIN;
-  logic        TX_ENA;
-  logic        TX_DONE;
-  logic        TX_SERIAL;
+  logic [7:0]  DATA;
+  logic        ENA;
+  logic        DONE;
+  logic        SERIAL;
 
-  modport uart_tx_mp (
+  modport uart_tx_mp(
     input  CLKDIV,
-    input  TX_DIN,
-    input  TX_ENA,
-    output TX_DONE,
-    output TX_SERIAL
+    input  DATA,
+    input  ENA,
+    output DONE,
+    output SERIAL
   );
+  
 endinterface
