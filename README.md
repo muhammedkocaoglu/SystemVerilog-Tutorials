@@ -30,6 +30,6 @@ Stuart Sutherland - RTL Modeling with SystemVerilog for Simulation and Synthesis
 Stuart Sutherland, Don Mills - Verilog and SystemVerilog Gotchas_ 101 Common Coding Errors and How to Avoid Them <br/>
 
 - UVM öğrenirken kullandığım kaynaklar: <br/>
-https://verificationacademy.com/
-https://www.youtube.com/@MunsifMAhmad
+https://verificationacademy.com/  <br/>
+https://www.youtube.com/@MunsifMAhmad  <br/>
 
