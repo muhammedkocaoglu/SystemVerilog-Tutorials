@@ -8,15 +8,10 @@ LinkedIn: https://www.linkedin.com/in/muhammedkocaoglu <br/>
 
 ![SystemVerilog_logo](https://user-images.githubusercontent.com/68936726/152042581-f54a9baf-2ee5-4c5e-81ff-b515d0a17152.png) <br/>
 
-
-
- Dersleri hazırlarken yanlış bilgi vermemek için olabildiğince çok kaynaktan yararlanmaya çalışıyorum. Videolarımı hazırlarken faydalandığım kaynakları burada paylaşacağım ve zamanla üzerine eklemeler de olacak. Sizler de bu alana katkı sağlayabilirsiniz. <br/> 
- 
 SystemVerilog öğrenmeden önce Verilog öğrenmeniz şart değildir. Ancak Verilog bilen bir kişi çok daha kolay öğrenebilir. Çünkü SystemVerilog Verilog dilinin üzerine yeni özellikler eklenerek geliştirilmiştir. 
 
 - Verilog dersleri için Udemy platformunda FATİH İLİĞ kanalını inceleyebilirsiniz.   <br/>
 https://www.udemy.com/user/fatih-ilig/  <br/>
-
 
 - Oğuz Ergin youtube kanalında Verilog HDL adlı oynatma listesini de tavsiye ederim. Oradaki içerikler faydalı olacaktır. <br/>
 https://www.youtube.com/watch?v=qSLRujmsfz0&list=PLvNq8wrSYGAU8Cf3n9rhL-GB4yMNO1-XC  <br/>
@@ -33,3 +28,8 @@ https://verificationacademy.com/ <br/>
 https://www.sutherland-hdl.com/about.html  <br/>
 Stuart Sutherland - RTL Modeling with SystemVerilog for Simulation and Synthesis using SystemVerilog for ASIC and FPGA design <br/>
 Stuart Sutherland, Don Mills - Verilog and SystemVerilog Gotchas_ 101 Common Coding Errors and How to Avoid Them <br/>
+
+- UVM öğrenirken kullandığım kaynaklar: <br/>
+https://verificationacademy.com/
+https://www.youtube.com/@MunsifMAhmad
+
